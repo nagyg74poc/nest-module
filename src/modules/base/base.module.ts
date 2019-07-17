@@ -1,8 +1,13 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { BaseService } from './base.service';
 
+@Global()
 @Module({
-    providers: [ BaseService ],
+    providers: [
+        BaseService,
+    ],
+    exports: [
+        BaseService,
+    ],
 })
-export class BaseModule {
-}
+export class BaseModule {}
