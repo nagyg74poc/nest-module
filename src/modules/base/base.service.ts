@@ -27,6 +27,12 @@ export class BaseService {
         this.$data = val;
     }
 
+    public alteredData() {
+        const altered = Math.floor(Math.random() * ( 15000 - 100 ) + 100);
+        const a = Object.assign({ altered }, this.$data);
+        return a;
+    }
+
     public async logData(): Promise<void> {
         await this.loaded;
         console.log(this.$data);
